@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.controllers;
 
+import guru.springframework.sfgpetclinic.ControllerTests;
 import guru.springframework.sfgpetclinic.fauxspring.Model;
 import guru.springframework.sfgpetclinic.fauxspring.ModelMapImpl;
 import guru.springframework.sfgpetclinic.model.Vet;
@@ -13,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-class VetControllerTest {
+class VetControllerTest implements ControllerTests {
     VetService vetService;
     SpecialtyService specialtyService;
     VetController vetController;
@@ -36,6 +37,6 @@ class VetControllerTest {
         String view = vetController.listVets(model);
 
         assertThat("vets/index").isEqualTo(view);
-        assertThat(((ModelMapImpl)model).getMap().size()).isEqualTo(2);
+        assertThat(((ModelMapImpl)model).getMap().size()).isEqualTo(1);
     }
 }
