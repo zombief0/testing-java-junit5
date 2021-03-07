@@ -37,6 +37,6 @@ class VetControllerTest implements ControllerTests {
         String view = vetController.listVets(model);
 
         assertThat("vets/index").isEqualTo(view);
-        assertThat(((ModelMapImpl)model).getMap().size()).isEqualTo(1);
+        assertThat(((ModelMapImpl)model).getMap().size()).isEqualTo(2);
     }
 }
